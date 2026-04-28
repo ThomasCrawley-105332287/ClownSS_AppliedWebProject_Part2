@@ -1,0 +1,28 @@
+/*
+filename: apply-styles.css
+author: Callum Rochfort
+created: 16/04/2026
+last modified: 16/04/2026
+description: This is the application page specific styling.
+*/
+
+/* fixes the gap in the header, but it also pushes your text closer together for some reason so you may need to fix that. I tried to find a work around but couldn't, SORRY! - Alex Hall*/
+* {
+    margin-left: 0;
+}
+
+#nav_heading {
+    margin: 0;
+}
+
+
+#apply_link{
+    border-radius: 0px 8px 8px 0px;    
+    border-color: #f5f5f5;
+    background-color: #f5f5f5;
+    color: rgb(3, 42, 56);
+}
+
+#jobs_link{
+    border-radius: 8px 0px 0px 8px;
+}

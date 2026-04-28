@@ -1,0 +1,140 @@
+/*
+filename: jobs-styles.css
+author: Alex Hall
+created: 16/04/2026
+last modified: 16/04/2026
+description: This is the style page for jobs.html
+*/
+.apply_button {
+    /* the clear function lets the button sit center and not get effected by floats*/
+    clear: both;
+    justify-self: center;
+    background-color: #d7d7d78c;
+    border-left: 4px solid #3498db;
+    padding: 10px;
+    margin-top: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+/* this changes hyperlink style */
+.apply_button a {
+    text-decoration: none;
+    color: #3b3b3b;
+}
+/* changes hyperlink colour when hovered */
+.apply_button a:hover {
+    color: #3498db;
+}
+
+#jobs_link{
+    border-radius: 8px 8px 0px 0px;
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+    color: rgb(3, 42, 56);
+    padding-bottom: 3%;
+}
+
+/* makes the numbers in the ordered list bold */
+ol li::marker {
+  font-weight: bold;
+}
+
+section h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 0px solid #3498db;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #2c3e50;
+}
+
+.job_header {
+    margin-bottom: 15px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.responsibilities {
+    margin-bottom: 15px;
+    border-bottom: 3px solid #3498db;
+    padding-top: 5px;
+}
+
+.responsibilities ol {
+        padding: 20px;
+}
+
+.salary {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: right;
+    font-size: small;
+    float: right;
+    padding: 5px;
+    margin-top: 0px;
+    background-color: #cdf1ff8c;
+    border-left: 4px solid #3498db;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 25%;
+}
+
+/* this overrides the aside p colour change in main style sheet */
+.salary p {
+    color: black;
+}
+/* the width makes it so these two sections float next to each other */
+.req_essential {
+    padding: 10px;
+    padding-left: 40px;
+    float: left;
+    width: 48%;
+    border-left: 4px solid #429b34;
+}
+
+.req_preferable {
+    padding: 10px;
+    padding-left: 40px;
+    float: right;
+    width: 48%;
+    border-left: 4px solid #c8b100;
+
+}
+
+/* Everything below here is copied from the old main style sheet since it got removed and my page relied on it. */
+aside {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 20px;
+    margin-top: 0px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    max-width: 1000px;
+    margin: 0px auto;
+    padding: 20px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}

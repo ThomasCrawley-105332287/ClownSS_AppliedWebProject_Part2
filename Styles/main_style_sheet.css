@@ -1,0 +1,283 @@
+/*
+filename: MainStylesheet.css
+author: Thomas Crawley, Jack Goodsell, Alex Hall, Callum Rochfort
+created: 12/04/2026
+last modified: 12/04/2026
+description: This is the main styling that applies to all pages.
+*/
+/* Navigation menu styling */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+ 
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;           /* reading spacing between lines */
+}
+
+#search_bar_label {
+    color: white;
+    margin-right: 5%;
+    text-align: right;
+}
+
+#search_bar_container {
+    display: grid;
+    grid-template-columns: 33% 52% 15%;
+    align-content: flex-end;
+    margin-top: 2em;
+    max-height: 2rem;
+}
+
+header {
+    background-color: rgb(3, 42, 56);
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0%;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+#nav_heading {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5rem 0 0.25rem;  /* small gap above and below the title */
+}
+
+
+/* removes the nav line without removing it from html files, it looked bad people! - Alex Hall*/
+#nav_line {
+    display: none;
+}
+
+
+div.nav_space {
+    width: 100%;
+    height: 11rem;
+    background-color: #f5f5f5;
+}
+
+div.nav_elements {
+    display: inline-grid;
+    padding: 0.1rem;
+    justify-content: end;
+}
+
+div.nav_bar{
+    display: grid;
+    grid-template-columns: 66% 34%;
+    border-bottom: solid 8px #f5f5f5;
+}
+
+img {
+    align-self: start;
+    max-width: 65px;
+    max-height: 900px;
+    width: auto;
+    height: auto;
+}
+
+legend {
+    color: rgba(0, 28, 44, 0.661);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+    padding:0.2rem 0.6rem;
+    border: 0.2rem solid #ffffff;
+    background-color:#013342;
+    border-radius: 8px;
+    position: relative;
+    top: -0.6rem;
+    color: #f5f5f5;
+}
+
+nav a:hover {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+/* Main Content */
+main {
+    max-width: 100%;
+    padding: 1rem;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+section {
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse; /* no double borders between adjacent cells */
+    margin-top: 2rem;
+}
+
+table caption {
+    text-align: left;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.1em;
+}
+
+table thead {
+    background-color: #2c3e50;
+    color: white;
+}
+
+table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+table td {
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+/* Zebra Striping with Hex Colors */
+table tbody tr:nth-child(odd) {
+    background-color: #ecf0f1;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Hover Effects */
+table tbody tr {
+    transition: all 0.3s ease;
+}
+
+table tbody tr:hover {
+    background-color: #3498db;
+    color: white;
+    box-shadow: inset 0 0 10px rgba(52, 152, 219, 0.2);
+    cursor: pointer;
+}
+
+table tbody tr:hover td {
+    border-bottom-color: #2c3e50;
+}
+
+/* Additional Styling for Definition List */
+dl {
+    margin: 0.1rem ;
+}
+
+dt {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 1rem;
+    font-size: 1.1em;
+}
+
+dd {
+    margin-left: 1rem;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Aside Styling */
+aside {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 5px;
+}
+
+aside h2 {
+    color: #856404;
+    border-bottom: none;
+}
+
+aside p {
+    color: #856404;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer a {
+    color: #00d9ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #2ecc71;
+    text-decoration: underline;
+}
+
+address {
+    margin-top: 1rem;
+    font-style: normal;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    table {
+        font-size: 0.9em;
+    }
+    
+    table th,
+    table td {
+        padding: 10px 8px;
+    }
+}

@@ -1,0 +1,89 @@
+/*
+filename: about-styles.css
+author: Jack Goodsell
+created: 16/04/2026
+last modified: 20/04/2026
+description: Styles specific to about.html only.
+
+*/
+
+/* ── Page layout: constrain main width on about page ── */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+* {
+    margin-left: 0;
+}
+
+#nav_heading {
+    margin: 0;
+}
+
+/* ── Active nav link highlight ── */
+#about_link {
+    border-radius: 8px 8px 0 0;
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+    color: rgb(3, 42, 56);
+    padding-bottom: 3%;
+}
+
+/* ── Student ID badge ── */
+.student-id {
+    background-color: #A62517;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85em;
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+    box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3);
+    transition: all 0.3s ease;
+}
+
+.student-id:hover {
+    background-color: #c0392b;
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.5);
+    transform: translateY(-2px);
+}
+
+/* ── Group photo section ── */
+.group-photo-section {
+    text-align: center;
+}
+
+.group-photo-figure {
+    border: 3px solid #3498db;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #ecf0f1;
+    text-align: center;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+    max-width: 100%;      
+}
+
+.group-photo-figure img {
+    width: 100%;            
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+figcaption {
+    color: #2c3e50;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 10px;
+}

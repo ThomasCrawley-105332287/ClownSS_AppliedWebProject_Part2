@@ -1,37 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>ClownSS - Smart City Solutions</title>
-        <link rel="stylesheet" href="styles/main_style_sheet.css">
-        <link href="styles/index-styles.css" rel="stylesheet">
-        <meta charset="UTF-8">
-        <meta name="Author" content="Thomas Crawley">
-        <meta name="Keywords" content="Smart City, ClownSS, Web Development">
-        <meta name="Description" content="Indexing page for Website">
-    </head>
-    <body>
-        <header>
-            <h1 id="nav_heading">Smart City Infrastructure Consultancy</h1>
-            <div class="nav_bar">
-                <div class="nav_elements">
-                    <nav> <!--The logo is generate with AI-->
-                        <img src="images/ClownSS_Logo_Simple.png" title="Company logo" alt="Smart City Logo" loading="eager">
-                        <a id="home_link" href="index.html">Home</a>
-                        <a href="pages/about.html">About Us</a>
-                        <a href="pages/jobs.html">Careers at ClownSS</a>
-                        <a href="Pages/apply.html">Apply at ClownSS</a>
-                    </nav>
-                </div>
-                <div>
-                    <search id="search_bar_container">
-                    <label id="search_bar_label" for="search_bar">Search Bar</label>
-                    <input type="text" placeholder="Search.." id="search_bar">
-                    <button type="submit">Search</button>
-                    </search>
-                </div>
-            </div>
-            <hr id="nav_line">
-        </header>
+<!-- variables for the meta tags, so each page is unique and uses the 1 header.inc file -->
+<?php
+  $pageTitle = "ClownSS - Smart City Solutions";
+  $metaDescription = "Indexing page for Website";
+  $metaKeywords = "Smart City, ClownSS, Web Development";
+  $metaAuthor = "Thomas Crawley";
+  $mainCSS = "styles/main_style_sheet.css";
+  $extraCSS = "styles/index-styles.css";
+?>
+
+
+<?php include 'includes/header.inc'; ?>
+
 <!-- Creates a space for the nav bar to sit in when the viewport is at the top of the page-->
         <div class="nav_space"></div>
         <main>

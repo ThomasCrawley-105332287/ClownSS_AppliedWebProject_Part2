@@ -2,12 +2,15 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" >
-        <meta name="description" content="available jobs page" >
-        <meta name="keywords" content="Smart City, ClownSS, Web Development, Jobs" >
-        <meta name="author" content="Alex Hall"  >
-        <link href="../styles/main_style_sheet.css" rel="stylesheet">
-        <link href="../styles/jobs-styles.css" rel="stylesheet">
-        <title><?php echo isset($pageTitle) ? $pageTitle : 'My Site'; ?></title>
+        <!-- Gets the team members input from each page for the meta tags -->
+        <meta name="description" content="<?php echo $metaDescription; ?>">
+        <meta name="keywords"    content="<?php echo $metaKeywords; ?>">
+        <meta name="author"      content="<?php echo $metaAuthor; ?>">
+        <link href="<?php echo $mainCSS; ?>" rel="stylesheet">
+        <?php if (isset($extraCSS)): ?>
+        <link href="<?php echo $extraCSS; ?>" rel="stylesheet">
+        <?php endif; ?>
+        <title><?php echo $pageTitle; ?></title>
     </head>
     <body>
         <header>

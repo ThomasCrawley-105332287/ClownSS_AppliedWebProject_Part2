@@ -1,37 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" >
-        <meta name="description" content="available jobs page" >
-        <meta name="keywords" content="Smart City, ClownSS, Web Development, Jobs" >
-        <meta name="author" content="Alex Hall"  >
-        <link href="../styles/main_style_sheet.css" rel="stylesheet">
-        <link href="../styles/jobs-styles.css" rel="stylesheet">
-        <title>Jobs</title>
-    </head>
-    <body>
-        <header>
-            <h1 id="nav_heading">Smart City Infrastructure Consultancy</h1>
-            <div class="nav_bar">
-                <div class="nav_elements">
-                    <nav> <!--The logo is generate with AI-->
-                        <img src="../images/ClownSS_Logo_Simple.png" title="Company logo" alt="Smart City Logo" loading="eager">
-                        <a href="../index.html">Home</a>
-                        <a href="about.html">About Us</a>
-                        <a id="jobs_link" href="jobs.html">Careers at ClownSS</a>
-                        <a href="apply.html">Apply at ClownSS</a>
-                    </nav>
-                </div>
-                <div>
-                    <search id="search_bar_container">
-                    <label id="search_bar_label" for="search_bar">Search Bar</label>
-                    <input type="text" placeholder="Search.." id="search_bar">
-                    <button type="submit">Search</button>
-                    </search>
-                </div>
-            </div>
-            <hr id="nav_line">
-        </header>
+<!-- variables for the meta tags, so each page is unique and uses the 1 header.inc file -->
+<?php
+  $pageTitle = "Available Jobs";
+  $metaDescription = "available jobs page";
+  $metaKeywords = "Smart City, ClownSS, Web Development, Jobs";
+  $metaAuthor = "Alex Hall";
+  $mainCSS = "../styles/main_style_sheet.css";
+  $extraCSS = "../styles/jobs-styles.css";
+?>
+<?php include '../includes/header.inc'; ?>
 
 <!-- Creates a space for the nav bar to sit in when the viewport is at the top of the page-->
         <div class="nav_space"></div>

@@ -1,37 +1,29 @@
+<!-- variables for the meta tags, so each page is unique and uses the 1 header.inc file -->
+<?php
+  $pageTitle = "About Page";
+  $metaDescription = "About page for website, providing general information regarding the group, and member contributions.";
+  $metaKeywords = "Smart City, ClownSS, Web Development, HTML, Hover effects, styled table, bordered figure";
+  $metaAuthor = "Jack Goodsell";
+  $mainCSS = "../styles/main_style_sheet.css";
+  $extraCSS = "../styles/about-styles.css";
+?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="../styles/main_style_sheet.css">
-    <link rel="stylesheet" href="../styles/about-styles.css">
-    <meta charset="UTF-8">
-    <meta name="description" content="About page for website, providing general information regarding the group, and member contributions.">
-    <meta name="keywords" content="Smart City, ClownSS, Web Development, HTML, Hover effects, styled table, bordered figure">
-    <meta name="author" content="Jack Goodsell">
-    <title>About.html</title>
-</head>
+<!-- variables for nav.inc -->
+<?php 
+$logoSrc = "../images/ClownSS_Logo_Simple.png";
+$indexLink = "../index.php";
+$aboutLink = "about.php";
+$jobsLink = "jobs.php";
+$applyLink = "apply.php";
+?>
 
-<body>
-    <header>
-        <h1 id="nav_heading">Smart City Infrastructure Consultancy</h1>
-        <div class="nav_bar">
-            <div class="nav_elements">
-                <nav> <!--The logo is generate with AI-->
-                    <img src="../images/ClownSS_Logo_Simple.png" title="Company logo" alt="Smart City Logo" loading="eager">
-                    <a href="../index.html">Home</a>
-                    <a id="about_link" href="about.html">About Us</a>
-                    <a href="jobs.html">Careers at ClownSS</a>
-                    <a href="jobs.html">Apply at ClownSS</a>
-                </nav>
-            </div>
-             <search id="search_bar_container">
-                    <label id="search_bar_label" for="search_bar">Search Bar</label>
-                    <input type="text" placeholder="Search.." id="search_bar">
-                    <button type="submit">Search</button> 
-                </search> 
-            </div>
-        <hr id="nav_line">
-    </header>
+<!-- footer.inc variables -->
+<?php 
+$selfLink = "about.php";
+?>
+
+<?php include '../includes/header.inc'; ?>
+<?php include '../includes/nav.inc'; ?>
 
     <!-- Creates a space for the nav bar to sit in when the viewport is at the top of the page-->
     <div class="nav_space"></div>
@@ -140,20 +132,4 @@
 
 
     </main>
-
-    <footer>
-        <p>&copy; 2026 ClownSS. All rights reserved.</p>
-    <a href="about.html" 
-    target="_self" 
-    title="Go to Top of the page"  
-    hreflang="en" 
-   >Click here to go to the top of the page</a>
-        <br>
-        <address>
-            <p>Contact us at: <a href="mailto:106016142@student.swin.edu.au">106016142@student.swin.edu.au</a></p>
-        </address>
-        <p>Github Repo:</p>
-        <a href="https://thomascrawley-105332287.github.io/ClownSS_AppliedWebProject_Part1/" target="_blank">ClownSS Repository</a>
-    </footer>
-</body>
-</html>
+    <?php include '../includes/footer.inc'; ?>

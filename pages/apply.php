@@ -1,40 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <link rel="stylesheet" href="../styles/main_style_sheet.css">
-      <link rel="stylesheet" href="../styles/apply-styles.css">
-      <meta charset="utf-8"/>
-      <meta name="description" content=" job application form with HTML5 validation, 
-                                       using patterns or regular expressions where applicable, 
-                                       and appropriate input types for each field." />
-      <meta name="keywords" content="HTML5, tags" />
-      <meta name="author" content="Callum Rochfort"  />
-      <title>HTML Structure and Content Elements + CSS Assessment</title> 
-   </head>
+<!-- variables for the meta tags, so each page is unique and uses the 1 header.inc file -->
+<?php
+  $pageTitle = "Job Application Page";
+  $metaDescription = "job application form with HTML5 validation, using patterns or regular expressions where applicable, and appropriate input types for each field.";
+  $metaKeywords = "Smart City, ClownSS, Web Development, HTML5, tags, apply, jobs";
+  $metaAuthor = "Callum Rochfort";
+  $mainCSS = "../styles/main_style_sheet.css";
+  $extraCSS = "../styles/about-styles.css";
+?>
 
-   <body>
-      <header>
-         <h1 id="nav_heading">Smart City Infrastructure Consultancy</h1>
-         <div class="nav_bar">
-                <div class="nav_elements">
-                    <nav> <!--The logo is generate with AI-->
-                        <img src="../images/ClownSS_Logo_Simple.png" title="Company logo" alt="Smart City Logo" loading="eager">
-                        <a href="../index.html">Home</a>
-                        <a href="about.html">About Us</a>
-                        <a href="jobs.html">Careers at ClownSS</a>
-                        <a id="apply_link" href="apply.html">Apply at ClownSS</a>
-                    </nav>
-                </div>
-                <div>
-                    <search id="search_bar_container">
-                    <label id="search_bar_label" for="search_bar">Search Bar</label>
-                    <input type="text" placeholder="Search.." id="search_bar">
-                    <button type="submit">Search</button>
-                    </search>
-                </div>
-            </div>
-         <hr id="nav_line">
-      </header>
+<!-- variables for nav.inc -->
+<?php 
+$logoSrc = "../images/ClownSS_Logo_Simple.png";
+$indexLink = "../index.php";
+$aboutLink = "about.php";
+$jobsLink = "jobs.php";
+$applyLink = "apply.php";
+?>
+
+<!-- footer.inc variables -->
+<?php 
+$selfLink = "apply.php";
+?>
+
+<?php include '../includes/header.inc'; ?>
+<?php include '../includes/nav.inc'; ?>
 
       <div class="nav_space"></div>
       
@@ -174,13 +163,4 @@
             <input type= "reset" value="Reset Form"/>
          </form>
       </main>
-
-      <footer>
-         <a href="https://clownss.atlassian.net/jira/software/projects/CAWPP1/boards/1">Jira Link</a> 
-         <a href="https://thomascrawley-105332287.github.io/ClownSS_AppliedWebProject_Part1/">GitHub Repository</a>
-         <a href="mailto:105332287@student.swin.edu.au">info@companyname.com</a>
-         <p>Applications - Smart City Infrastructure Consultancy</p>
-      </footer>
-</body>
-
-</html>
+      <?php include '../includes/footer.inc'; ?>

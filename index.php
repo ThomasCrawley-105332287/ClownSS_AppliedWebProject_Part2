@@ -99,7 +99,7 @@ $selfLink = "index.php";
                     <td id="out">
                         <p></p>
                     </td>
-                    <td colspan="3">
+                    <td colspan="2">
                         
                     </td>
                 </tr>
@@ -113,7 +113,7 @@ $selfLink = "index.php";
                     <td id="ev">
                         
                     </td>
-                    <td colspan="2">
+                    <td>
                         
                     </td>
                 </tr>

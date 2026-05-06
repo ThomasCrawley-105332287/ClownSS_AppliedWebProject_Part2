@@ -71,7 +71,7 @@ $selfLink = "index.php";
                     <td>
                         
                     </td>
-                    <td id="co2" colspan="2">
+                    <td colspan="2" style="background-color: #06678a">
                         <p></p>
                     </td>
                     <td colspan="2">
@@ -85,7 +85,7 @@ $selfLink = "index.php";
                     <td colspan="3">
                         
                     </td>
-                    <td colspan="2" id="renuable">
+                    <td colspan="2" style="background-color: #06678a">
                         <p></p>
                     </td>
                 </tr>
@@ -96,7 +96,7 @@ $selfLink = "index.php";
                     <td colspan="2">
                         
                     </td>
-                    <td id="out">
+                    <td style="background-color: #06678a">
                         <p></p>
                     </td>
                     <td colspan="2">
@@ -110,7 +110,7 @@ $selfLink = "index.php";
                     <td colspan="3">
                         
                     </td>
-                    <td id="ev">
+                    <td style="background-color: #06678a">
                         
                     </td>
                     <td>

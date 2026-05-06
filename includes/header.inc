@@ -11,4 +11,10 @@
         <link href="<?php echo $extraCSS; ?>" rel="stylesheet">
         <?php endif; ?>
         <title><?php echo $pageTitle; ?></title>
+        <style>
+            * {
+                 margin: 0;
+                box-sizing: border-box;
+            }
+        </style>
     </head>

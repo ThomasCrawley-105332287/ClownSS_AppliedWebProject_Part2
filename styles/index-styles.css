@@ -31,24 +31,6 @@ description: the style page for index.html
     border: solid 2px #2c3e50;
 }
 
-#co2{
-    padding: none;
-    background-color: #06678a;
-}
-
-#renuable{
-    background-color: #06678a;
-}
-
-#out{
-    background-color: #06678a;
-}
-
-#ev{
-    background-color: #06678a;
-}
-
-
 #acknowledgement{
     display: flex;
 }

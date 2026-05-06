@@ -83,7 +83,7 @@ $selfLink = "about.php";
         <section class="group-photo-section">
             <h2>Group Photo</h2>
             <figure class="group-photo-figure">
-                <img src="../images/group_image.jpg" alt="From left to right: Thomas Crawley, Callum Rochfort, Jack Goodsell, Alex Hall" title="Group photo of all team members">
+                <img src="../images/Group_Image.jpg" alt="From left to right: Thomas Crawley, Callum Rochfort, Jack Goodsell, Alex Hall" title="Group photo of all team members">
                 <figcaption>ClownSS — Friday 17th April 2026</figcaption>
             </figure>
         </section>

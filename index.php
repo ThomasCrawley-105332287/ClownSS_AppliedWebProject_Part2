@@ -10,7 +10,7 @@
 
 <!-- variables for nav.inc -->
 <?php 
-$logoSrc = "images/ClownSS_Logo_Simple.png";
+$logoSrc = "images/clownSS_logo_simple.png";
 $indexLink = "index.php";
 $aboutLink = "pages/about.php";
 $jobsLink = "pages/jobs.php";

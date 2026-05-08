@@ -5,8 +5,6 @@
             <address><p>Contact us at: <a href="mailto:support@clownss.com.au">support@clownss.com.au</a></p></address>
             <p> Github Repo: </p>
             <a href="https://github.com/ThomasCrawley-105332287/ClownSS_AppliedWebProject_Part2" target="_blank">ClownSS Repository</a>
-            <p>Jira Link: </p>
-            <a href="https://clownss.atlassian.net/jira/software/projects/CAWPP1/boards/1/backlog" target="_blank">Jira Space</a>
         </footer>
     </body>
 </html>

@@ -35,7 +35,7 @@ $selfLink = "apply.php";
                </aside>
          </article>
 
-         <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+         <form method="post" action="process_oei.php">
             <!--Note we have to use a special escape character to print an apostrophe on the Web page -->
             <h2 id="headings">Applicant Details </h2>
             <p><label for="jobref">Job Reference Number</label> 

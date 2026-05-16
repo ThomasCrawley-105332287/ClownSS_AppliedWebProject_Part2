@@ -43,11 +43,11 @@ $selfLink = "apply.php";
             </p>
             <fieldset>
                <legend>Applicant Information Details</legend>
-               <p><label for="firstname">First Name</label> 
-                  <input type="text" name= "firstname" id="firstname" maxlength="20" size="20" required="required"/>
+               <p><label for="first_name">First Name</label> 
+                  <input type="text" name= "first_name" id="first_name" maxlength="20" size="20" required="required"/>
                </p>
-               <p><label for="lastname">Last Name</label> 
-                  <input type="text" name= "lastname" id="lastname" maxlength="20" size="20" required="required"/>
+               <p><label for="last_name">Last Name</label> 
+                  <input type="text" name= "last_name" id="last_name" maxlength="20" size="20" required="required"/>
                </p>
                <p><label for="gender">Gender</label> 
                   <select name="gender" id="gender" required="required">
@@ -112,8 +112,8 @@ $selfLink = "apply.php";
                <fieldset>
                   <legend>Contact Details</legend>
                   <p>Provide Your Contact Details Below</p>
-                  <p><label for="phonenumber">Phone Number</label>
-                     <input type="text" id="phonenumber" name="phonenumber" minlength="8" maxlength="12" size="30" required="required">
+                  <p><label for="phone_number">Phone Number</label>
+                     <input type="text" id="phone_number" name="phone_number" minlength="8" maxlength="12" size="30" required="required">
                   </p>
                   <p><label for="email">Email</label>
                      <input type="email" id="email" name="email" required="required">
@@ -151,8 +151,8 @@ $selfLink = "apply.php";
                            <label for="SC002keyskill5">Strong written communication skills; ability to present technical content to non-technical audiences.</label>
                      </p>
                   </fieldset>
-                  <p><label for="otherskills">Other Skills</label>
-                        <textarea id="otherskills" name="otherskills" rows="4" cols="40"></textarea>
+                  <p><label for="other_skills">Other Skills</label>
+                        <textarea id="other_skills" name="other_skills" rows="4" cols="40"></textarea>
                   </p>
                </fieldset>
             </fieldset>

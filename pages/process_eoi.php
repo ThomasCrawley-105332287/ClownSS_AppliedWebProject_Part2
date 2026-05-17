@@ -13,11 +13,15 @@
     if(isset($_POST['dob'])) {
         $dob = $_POST['dob'];
     }
-    if(isset($_POST['citizen'])) {
-        $citizen = $_POST['citizen'];
+    if(isset($_POST['citizenship'])) {
+        $citizenship = 1;
+    } else {
+        $citizenship = 0;
     }
     if(isset($_POST['indigenous'])) {
-        $indigenous = $_POST['indigenous'];
+        $indigenous = 1;
+    } else {
+        $indigenous = 0;
     }
     if(isset($_POST['work_visa'])) {
         $work_visa = $_POST['work_visa'];
@@ -41,37 +45,57 @@
         $email = $_POST['email'];
     }
     if(isset($_POST['SC001keyskill1'])) {
-        $SC001keyskill1 = $_POST['SC001keyskill1'];
+        $SC001keyskill1 = 1;
+    } else {
+        $SC001keyskill1 = 0;
     }
     if(isset($_POST['SC001keyskill2'])) {
-        $SC001keyskill2 = $_POST['SC001keyskill2'];
+        $SC001keyskill2 = 1;
+    } else {
+        $SC001keyskill2 = 0;
     }
     if(isset($_POST['SC001keyskill3'])) {
-        $SC001keyskill3 = $_POST['SC001keyskill3'];
+        $SC001keyskill3 = 1;
+    } else {
+        $SC001keyskill3 = 0;
     }
     if(isset($_POST['SC001keyskill4'])) {
-        $SC001keyskill4 = $_POST['SC001keyskill4'];
+        $SC001keyskill4 = 1;
+    } else {
+        $SC001keyskill4 = 0;
     }
     if(isset($_POST['SC001keyskill5'])) {
-        $SC001keyskill5 = $_POST['SC001keyskill5'];
+        $SC001keyskill5 = 1;
+    } else {
+        $SC001keyskill5 = 0;
     }
     if(isset($_POST['SC002keyskill1'])) {
-        $SC002keyskill1 = $_POST['SC002keyskill1'];
+        $SC002keyskill1 = 1;
+    } else {
+        $SC002keyskill1 = 0;
     }
     if(isset($_POST['SC002keyskill2'])) {
-        $SC002keyskill2 = $_POST['SC002keyskill2'];
+        $SC002keyskill2 = 1;
+    } else {
+        $SC002keyskill2 = 0;
     }
     if(isset($_POST['SC002keyskill3'])) {
-        $SC002keyskill3 = $_POST['SC002keyskill3'];
+        $SC002keyskill3 = 1;
+    } else {
+        $SC002keyskill3 = 0;
     }
     if(isset($_POST['SC002keyskill4'])) {
-        $SC002keyskill4 = $_POST['SC002keyskill4'];
+        $SC002keyskill4 = 1;
+    } else {
+        $SC002keyskill4 = 0;
     }
     if(isset($_POST['SC002keyskill5'])) {
-        $SC002keyskill5 = $_POST['SC002keyskill5'];
+        $SC002keyskill5 = 1;
+    } else {
+        $SC002keyskill5 = 0;
     }
-    if(isset($_POST['otherskills'])) {
-        $otherskills = $_POST['otherskills'];
+    if(isset($_POST['other_skills'])) {
+        $other_skills = $_POST['other_skills'];
     }
 
     $conn = mysqli_connect("localhost", "root", "", "clownss");
@@ -79,31 +103,18 @@
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $sql = "INSERT INTO apply (first_name, 
-                                last_name, 
-                                gender, 
-                                dob, 
-                                citizen, 
-                                indigenous, 
-                                work_visa, 
-                                street, 
-                                suburb, 
-                                state, 
-                                postcode, 
-                                phone_number, 
-                                email, 
-                                SC001keyskill1, 
-                                SC001keyskill2, 
-                                SC001keyskill3, 
-                                SC001keyskill4, 
-                                SC001keyskill5, 
-                                SC002keyskill1, 
-                                SC002keyskill2, 
-                                SC002keyskill3, 
-                                SC002keyskill4, 
-                                SC002keyskill5, 
-                                otherskills)";
-    mysqli_query($conn, $sql);
-    
+    $sql = "INSERT INTO `apply` (first_name, last_name, gender, dob, aus_citizen, indigenous, work_visa, 
+                                street_addr, suburb, state, postcode, phone_number, email, 
+                                SC001_skill_1, SC001_skill_2, SC001_skill_3, SC001_skill_4, SC001_skill_5, 
+                                SC002_skill_1, SC002_skill_2, SC002_skill_3, SC002_skill_4, SC002_skill_5, 
+                                other_skills)
+                                VALUES
+                                ('$first_name', '$last_name', '$gender', '$dob', $citizenship, $indigenous, '$work_visa',
+                                '$street', '$suburb', '$state', $postcode, $phone_number, '$email',
+                                $SC001keyskill1, $SC001keyskill2, $SC001keyskill3, $SC001keyskill4, $SC001keyskill5,
+                                $SC002keyskill1, $SC002keyskill2, $SC002keyskill3, $SC002keyskill4, $SC002keyskill5,
+                                '$other_skills')";
+    $result = mysqli_query($conn, $sql);
+
     mysqli_close($conn);
 ?>

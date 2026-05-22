@@ -67,7 +67,7 @@ $selfLink = "apply.php";
                   </p>
 
                   <p><label for="indigenous">Indigenous Australian</label> 
-                     <input type="checkbox" id="indigenous" name="citizenship" value="indigenous"/>
+                     <input type="checkbox" id="indigenous" name="indigenous" value="indigenous"/>
                   </p>
 
                   <hr>

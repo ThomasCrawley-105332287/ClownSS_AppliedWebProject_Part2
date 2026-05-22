@@ -1,4 +1,41 @@
-<div class="nav_space"></div>
+<style>
+    main{
+        margin-top: 11rem;
+    }
+    input:disabled,
+    textarea:disabled,
+    select:disabled {
+        opacity: 1;
+        color: inherit;
+        background-color: inherit;
+        border-color: inherit;
+        -webkit-text-fill-color: inherit;
+        -webkit-opacity: 1;
+        cursor: default;
+    }
+    input[type="checkbox"]:disabled {
+        opacity: 1;
+        appearance: none;
+        -webkit-appearance: none;
+        width: 13px;
+        height: 13px;
+        border: 1px solid #555;
+        background-color: #fff;
+        cursor: default;
+        position: relative;
+    }
+    input[type="checkbox"]:disabled:checked::after {
+        content: "X";
+        font-size: 11px;
+        position: absolute;
+        top: -1px;
+        left: 1px;
+        color: #000;
+    }
+</style>
+
+<div class="nav_space></div>
+
 <main>
     <form method="post" action="process_eoi.php">
         <h2 id="headings">You Have Submitted These Details</h2>
@@ -139,7 +176,7 @@
             </p>
         </fieldset>
             <p><label for="other_skills">Other Skills</label>
-                <textarea id="other_skills" name="other_skills" rows="4" cols="40" value="<?php echo $other_skills; ?>" disabled></textarea>
+                <textarea id="other_skills" name="other_skills" rows="4" cols="40" placeholder="<?php echo $other_skills; ?>" disabled></textarea>
             </p>
         </fieldset>
         </fieldset>

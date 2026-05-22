@@ -5,7 +5,7 @@
     $metaKeywords = "Smart City, ClownSS, Web Development, HTML5, tags, application, eoi";
     $metaAuthor = "Thomas Crawley";
     $mainCSS = "../styles/main_style_sheet.css";
-    $extraCSS = "../styles/about-styles.css";
+    $extraCSS = "";
 
     $logoSrc = "../images/clownSS_logo_simple.png";
     $indexLink = "../index.php";

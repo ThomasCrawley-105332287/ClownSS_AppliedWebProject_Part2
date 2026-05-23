@@ -51,6 +51,14 @@ if (!$conn) {
 
     <h1>Manage EOIs</h1>
 
+    <p>Logged in as:
+        <strong>
+        <?php
+            echo htmlspecialchars($_SESSION["username"]);
+        ?>
+        </strong>
+    </p>
+
 </main>
 
 <?php include '../includes/footer.inc'; ?>

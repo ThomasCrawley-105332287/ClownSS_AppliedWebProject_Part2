@@ -48,7 +48,7 @@
             die("Connection failed: " . mysqli_connect_error());
         }
 
-        $reference_exists = "SELECT EXISTS (SELECT 1 FROM `eoi` WHERE job_ref_num = '$job_ref_num')";
+        $reference_exists = "SELECT EXISTS (SELECT 1 FROM `eoi` WHERE phone_number = $phone_number)";
         if (mysqli_query($conn, $reference_exists)) {
             $upadate_status = "UPDATE `eoi` SET first_name = '$first_name', last_name = '$last_name',
                                                 gender = '$gender', dob = '$dob', aus_citizen = $citizenship, 
@@ -71,7 +71,7 @@
             require_once('../includes/application.inc');
             require_once('../includes/footer.inc');
         } else {
-            $sql = "INSERT INTO `oei` (first_name, last_name, gender, dob, aus_citizen, indigenous, work_visa, 
+            $sql = "INSERT INTO `eoi` (first_name, last_name, gender, dob, aus_citizen, indigenous, work_visa, 
                                     street_addr, suburb, state, postcode, phone_number, email, 
                                     SC001_skill_1, SC001_skill_2, SC001_skill_3, SC001_skill_4, SC001_skill_5, 
                                     SC002_skill_1, SC002_skill_2, SC002_skill_3, SC002_skill_4, SC002_skill_5, 
@@ -82,13 +82,13 @@
                                     $SC001keyskill1, $SC001keyskill2, $SC001keyskill3, $SC001keyskill4, $SC001keyskill5,
                                     $SC002keyskill1, $SC002keyskill2, $SC002keyskill3, $SC002keyskill4, $SC002keyskill5,
                                     '$other_skills', '$job_ref_num')";
-            $result =mysqli_query($conn, $sql);
+            $result = mysqli_query($conn, $sql);
 
             mysqli_close($conn);
 
             require_once('../includes/header.inc');
             require_once('../includes/nav.inc');
-            require_once('../includes/applications.inc');
+            require_once('../includes/application.inc');
             require_once('../includes/footer.inc');
         }
     } else if ($null_exists) {

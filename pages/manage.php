@@ -59,6 +59,12 @@ if (!$conn) {
         </strong>
     </p>
 
+    <p>
+        <a href="logout.php">
+        Logout
+        </a>
+    </p>
+
 </main>
 
 <?php include '../includes/footer.inc'; ?>

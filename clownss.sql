@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2026 at 06:41 AM
+-- Generation Time: May 22, 2026 at 06:59 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -47,10 +47,10 @@ INSERT INTO `about` (`id`, `name`, `project1`, `project2`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oei`
+-- Table structure for table `eoi`
 --
 
-CREATE TABLE `oei` (
+CREATE TABLE `eoi` (
   `eoi_num` int(11) NOT NULL,
   `first_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
@@ -91,9 +91,9 @@ ALTER TABLE `about`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `oei`
+-- Indexes for table `eoi`
 --
-ALTER TABLE `oei`
+ALTER TABLE `eoi`
   ADD PRIMARY KEY (`eoi_num`);
 
 --
@@ -107,9 +107,9 @@ ALTER TABLE `about`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `oei`
+-- AUTO_INCREMENT for table `eoi`
 --
-ALTER TABLE `oei`
+ALTER TABLE `eoi`
   MODIFY `eoi_num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 

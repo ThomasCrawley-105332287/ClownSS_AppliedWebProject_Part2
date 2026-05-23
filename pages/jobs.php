@@ -42,6 +42,37 @@ if (!$conn) {
 }
 ?>
 
+<?php
+
+$sql_query =
+    "SELECT * FROM jobs";
+
+if (
+    isset($_GET["search"]) &&
+    $_GET["search"] != ""
+) {
+
+    $search =
+        mysqli_real_escape_string(
+            $conn,
+            $_GET["search"]
+        );
+
+    $sql_query .=
+        " WHERE
+            job_title LIKE '%$search%'
+            OR
+            reference_number LIKE '%$search%'";
+}
+
+$result =
+    mysqli_query(
+        $conn,
+        $sql_query
+    );
+?>
+
+
 <?php include '../includes/header.inc'; ?>
 <?php include '../includes/nav.inc'; ?>
 

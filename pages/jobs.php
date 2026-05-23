@@ -58,6 +58,30 @@ if (!$conn) {
                     you'll find a collaborative environment where your ideas matter and your work makes a real difference — 
                     explore our current openings below and take the first step toward a career that moves cities forward.</p>
             </aside>
+
+<form method="get" action="jobs.php">
+
+    <p>
+
+        <label for="search">
+            Search Jobs
+        </label>
+
+        <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Search by title or reference"
+        >
+
+        <input
+            type="submit"
+            value="Search"
+        >
+
+    </p>
+
+</form>
             <!-- The job and its infomation -->
             <section class="job_list">
                 <aside class="salary">

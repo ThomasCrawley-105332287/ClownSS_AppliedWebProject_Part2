@@ -1,6 +1,6 @@
 <style>
     main{
-        margin-top: 11rem;
+        margin-top: 9rem;
     }
     input:disabled,
     textarea:disabled,
@@ -33,8 +33,6 @@
         color: #000;
     }
 </style>
-
-<div class="nav_space></div>
 
 <main>
     <form method="post" action="process_eoi.php">

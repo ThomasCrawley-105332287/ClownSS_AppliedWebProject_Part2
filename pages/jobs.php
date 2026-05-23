@@ -22,6 +22,26 @@ $applyLink = "apply.php";
 $selfLink = "jobs.php";
 ?>
 
+<?php
+
+require_once("../includes/settings.php");
+
+$conn = mysqli_connect(
+    $host,
+    $username,
+    $password,
+    $database
+);
+
+if (!$conn) {
+
+    die(
+        "Connection failed: "
+        . mysqli_connect_error()
+    );
+}
+?>
+
 <?php include '../includes/header.inc'; ?>
 <?php include '../includes/nav.inc'; ?>
 

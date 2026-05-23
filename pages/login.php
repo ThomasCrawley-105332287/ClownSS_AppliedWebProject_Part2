@@ -1,4 +1,25 @@
 <?php
+    $pageTitle = "Manager Login";
+    $metaDescription = "Manager login page for accessing the site management dashboard.";
+    $metaKeywords = "manager login, ClownSS, admin, dashboard";
+    $metaAuthor = "Jack Goodsell";
+    $mainCSS = "../styles/main_style_sheet.css";
+?>
+
+<?php 
+    $logoSrc = "../images/clownSS_logo_simple.png";
+    $indexLink = "../index.php";
+    $aboutLink = "about.php";
+    $jobsLink = "jobs.php";
+    $applyLink = "apply.php";
+?>
+
+<!-- footer.inc variables -->
+<?php 
+$selfLink = "login.php";
+?>
+
+<?php
 session_start();
 
 require_once("../includes/settings.php");

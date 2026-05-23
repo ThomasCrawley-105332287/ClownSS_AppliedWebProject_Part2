@@ -1,4 +1,25 @@
 <?php
+  $pageTitle = "Manage EOIs";
+  $metaDescription = "Manage Expressions of Interest for the ClownSS project.";
+  $metaKeywords = "Smart City, ClownSS, EOIs, manage EOIs, administration, web management";
+  $metaAuthor = "Jack Goodsell";
+  $mainCSS = "../styles/main_style_sheet.css";
+?>
+
+<?php 
+$logoSrc = "../images/clownSS_logo_simple.png";
+$indexLink = "../index.php";
+$aboutLink = "about.php";
+$jobsLink = "jobs.php";
+$applyLink = "apply.php";
+?>
+
+<!-- footer.inc variables -->
+<?php 
+$selfLink = "manage.php";
+?>
+
+<?php
 session_start();
 
 /*

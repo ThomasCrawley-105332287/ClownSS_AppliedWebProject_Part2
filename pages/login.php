@@ -22,6 +22,86 @@ function sanitise_input($data) {
     return $data;
 }
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $login_username =
+        sanitise_input($_POST["username"]);
+
+    $login_password =
+        sanitise_input($_POST["password"]);
+
+    /*
+        empty validation
+    */
+    if (
+        empty($login_username) ||
+        empty($login_password)
+    ) {
+
+        $error_message =
+            "Please enter username and password.";
+
+    } else {
+
+        /*
+            prepared statement
+        */
+        $stmt = $conn->prepare(
+            "SELECT * FROM users WHERE username = ?"
+        );
+
+        $stmt->bind_param(
+            "s",
+            $login_username
+        );
+
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        /*
+            check if user exists
+        */
+        if ($result->num_rows > 0) {
+
+            $user = mysqli_fetch_assoc($result);
+
+            /*
+                verify password hash
+            */
+            if (
+                password_verify(
+                    $login_password,
+                    $user["password"]
+                )
+            ) {
+
+                /*
+                    security
+                */
+                session_regenerate_id(true);
+
+                $_SESSION["username"] =
+                    $user["username"];
+
+                header("Location: manage.php");
+
+                exit();
+
+            } else {
+
+                $error_message =
+                    "Incorrect username or password.";
+            }
+
+        } else {
+
+            $error_message =
+                "Incorrect username or password.";
+        }
+    }
+}
+
 
 ?>
 

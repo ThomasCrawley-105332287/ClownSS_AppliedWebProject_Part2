@@ -1,0 +1,38 @@
+main{
+    margin-top: 9rem;
+}
+input:disabled, textarea:disabled, select:disabled {
+    opacity: 1;
+    color: inherit;
+    background-color: inherit;
+    border-color: inherit;
+    -webkit-text-fill-color: inherit;
+    -webkit-opacity: 1;
+    cursor: default;
+}
+input[type="checkbox"]:disabled {
+    opacity: 1;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    border: 1px solid #555;
+    background-color: #fff;
+    cursor: default;
+    position: relative;
+}
+input[type="checkbox"]:disabled:checked::after {
+    content: "X";
+    font-size: 11px;
+    position: absolute;
+    top: -1px;
+    left: 1px;
+    color: #000;
+}
+div.comparison{
+    display: flex;
+    flex-direction: row-reverse;
+}
+div.old_data, .new_data{
+    flex: 1;
+}

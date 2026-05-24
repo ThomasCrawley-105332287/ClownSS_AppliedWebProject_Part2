@@ -49,7 +49,12 @@
         }
 
         $reference_exists = "SELECT EXISTS (SELECT 1 FROM `eoi` WHERE phone_number = $phone_number)";
-        if (mysqli_query($conn, $reference_exists)) {
+        $check_result = mysqli_query($conn, $reference_exists);
+        if (mysqli_num_rows($check_result) > 0) {
+            $update = true;
+            $old_data = "SELECT * FROM `eoi` WHERE phone_number = $phone_number";
+            $result = mysqli_query($conn, $old_data);
+            $old_row = mysqli_fetch_assoc($result);
             $upadate_status = "UPDATE `eoi` SET first_name = '$first_name', last_name = '$last_name',
                                                 gender = '$gender', dob = '$dob', aus_citizen = $citizenship, 
                                                 indigenous = $indigenous, work_visa = '$work_visa', 
@@ -61,9 +66,8 @@
                                                 SC002_skill_2 = $SC002keyskill2, SC002_skill_3 = $SC002keyskill3, 
                                                 SC002_skill_4 = $SC002keyskill4, SC002_skill_5 = $SC002keyskill5,
                                                 other_skills = '$other_skills', status = 'current' 
-                                            WHERE job_ref_num = '$job_ref_num';";
-            $result = mysqli_query($conn, $upadate_status);
-
+                                            WHERE phone_number = '$phone_number';";
+            mysqli_query($conn, $upadate_status);
             mysqli_close($conn);
 
             require_once('../includes/header.inc');

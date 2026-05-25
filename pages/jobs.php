@@ -320,14 +320,12 @@ if ($result) {
 
     }
 }
+
+mysqli_close($conn);
+
 ?>
 
-            <!-- The job and its information -->
-
-            <br>
 
 
-            <!--Second job and its info-->
-    
-        </main>
+
         <?php include '../includes/footer.inc'; ?>

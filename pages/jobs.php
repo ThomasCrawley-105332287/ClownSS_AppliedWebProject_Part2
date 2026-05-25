@@ -116,6 +116,212 @@ $result =
     </p>
 
 </form>
+
+
+<?php
+
+if ($result) {
+
+    while (
+        $row = mysqli_fetch_assoc($result)
+    ) {
+
+?>
+
+<section class="job_list">
+
+    <aside class="salary">
+
+        <p>Salary</p>
+
+        <p style="font-size: large;">
+
+            <strong>
+
+                <?php
+                    echo htmlspecialchars(
+                        $row["salary"]
+                    );
+                ?>
+
+            </strong>
+
+        </p>
+
+        <p>
+
+            Reports to:
+
+            <?php
+                echo htmlspecialchars(
+                    $row["reports_to"]
+                );
+            ?>
+
+        </p>
+
+    </aside>
+
+    <div class="job_header">
+
+        <h2>
+
+            <?php
+                echo htmlspecialchars(
+                    $row["job_title"]
+                );
+            ?>
+
+        </h2>
+
+        <p>
+
+            <strong>
+                Reference number:
+            </strong>
+
+            <?php
+                echo htmlspecialchars(
+                    $row["reference_number"]
+                );
+            ?>
+
+        </p>
+
+        <br>
+
+        <p>
+
+            <?php
+                echo htmlspecialchars(
+                    $row["short_description"]
+                );
+            ?>
+
+        </p>
+
+    </div>
+
+    <div class="responsibilities">
+
+        <h3>Key responsibilities</h3>
+
+        <ol>
+
+            <?php
+
+            $responsibilities =
+                explode(
+                    "\n",
+                    $row["responsibilities"]
+                );
+
+            foreach (
+                $responsibilities
+                as
+                $item
+            ) {
+
+                echo "<li>"
+                    . htmlspecialchars($item)
+                    . "</li>";
+            }
+
+            ?>
+
+        </ol>
+
+    </div>
+
+    <h3>Requirements</h3>
+
+    <br>
+
+    <section class="req_essential">
+
+        <p><strong>Essential</strong></p>
+
+        <ol>
+
+            <?php
+
+            $essential_requirements =
+                explode(
+                    "\n",
+                    $row["essential_requirements"]
+                );
+
+            foreach (
+                $essential_requirements
+                as
+                $item
+            ) {
+
+                echo "<li>"
+                    . htmlspecialchars($item)
+                    . "</li>";
+            }
+
+            ?>
+
+        </ol>
+
+    </section>
+
+    <section class="req_preferable">
+
+        <p><strong>Preferable</strong></p>
+
+        <ul>
+
+            <?php
+
+            $preferable_requirements =
+                explode(
+                    "\n",
+                    $row["preferable_requirements"]
+                );
+
+            foreach (
+                $preferable_requirements
+                as
+                $item
+            ) {
+
+                echo "<li>"
+                    . htmlspecialchars($item)
+                    . "</li>";
+            }
+
+            ?>
+
+        </ul>
+
+    </section>
+
+    <p class="apply_button">
+
+        <a
+            href="apply.php"
+            title="Apply for job"
+        >
+
+            <strong>Apply</strong>
+
+        </a>
+
+    </p>
+
+</section>
+
+<br>
+
+<?php
+
+    }
+}
+?>
+
             <!-- The job and its information -->
 
             <br>

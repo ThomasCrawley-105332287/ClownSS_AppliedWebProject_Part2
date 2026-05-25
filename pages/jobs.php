@@ -47,6 +47,8 @@ if (!$conn) {
 $sql_query =
     "SELECT * FROM jobs";
 
+$search = "";
+
 if (
     isset($_GET["search"]) &&
     $_GET["search"] != ""

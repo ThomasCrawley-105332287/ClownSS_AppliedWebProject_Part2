@@ -50,7 +50,7 @@
 
         $reference_exists = "SELECT EXISTS (SELECT 1 FROM `eoi` WHERE phone_number = $phone_number)";
         $check_result = mysqli_query($conn, $reference_exists);
-        if (mysqli_num_rows($check_result) > 0) {
+        if (mysqli_num_rows($check_result) > 1) {
             $update = true;
             $old_data = "SELECT * FROM `eoi` WHERE phone_number = $phone_number";
             $result = mysqli_query($conn, $old_data);
@@ -75,6 +75,7 @@
             require_once('../includes/application.inc');
             require_once('../includes/footer.inc');
         } else {
+            $update = false;
             $sql = "INSERT INTO `eoi` (first_name, last_name, gender, dob, aus_citizen, indigenous, work_visa, 
                                     street_addr, suburb, state, postcode, phone_number, email, 
                                     SC001_skill_1, SC001_skill_2, SC001_skill_3, SC001_skill_4, SC001_skill_5, 

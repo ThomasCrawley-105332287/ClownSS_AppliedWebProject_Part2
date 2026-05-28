@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2026 at 02:34 PM
+-- Generation Time: May 28, 2026 at 10:07 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -61,7 +61,7 @@ CREATE TABLE `eoi` (
   `work_visa` varchar(20) DEFAULT NULL,
   `street_addr` varchar(100) DEFAULT NULL,
   `suburb` varchar(20) DEFAULT NULL,
-  `state` char(3) DEFAULT NULL,
+  `state` char(26) DEFAULT NULL,
   `postcode` int(4) DEFAULT NULL,
   `phone_number` int(10) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
@@ -77,7 +77,7 @@ CREATE TABLE `eoi` (
   `SC002_skill_5` tinyint(1) DEFAULT NULL,
   `other_skills` text DEFAULT NULL,
   `status` char(7) DEFAULT 'NEW',
-  `job_ref_num` int(5) NOT NULL
+  `job_ref_num` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -169,7 +169,7 @@ ALTER TABLE `about`
 -- AUTO_INCREMENT for table `eoi`
 --
 ALTER TABLE `eoi`
-  MODIFY `eoi_num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `eoi_num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `jobs`

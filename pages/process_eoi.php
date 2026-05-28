@@ -49,8 +49,9 @@
         }
 
         $reference_exists = "SELECT EXISTS (SELECT 1 FROM `eoi` WHERE phone_number = $phone_number)";
-        $check_result = mysqli_query($conn, $reference_exists);
-        if (mysqli_num_rows($check_result) > 1) {
+        $check_col = mysqli_query($conn, $reference_exists);
+        $col_result = $check_col->fetch_column();
+        if ($col_result == 1) {
             $update = true;
             $old_data = "SELECT * FROM `eoi` WHERE phone_number = $phone_number";
             $result = mysqli_query($conn, $old_data);

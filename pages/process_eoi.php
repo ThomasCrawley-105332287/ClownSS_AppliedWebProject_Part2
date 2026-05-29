@@ -43,7 +43,7 @@
     $job_ref_num    = isset($_POST['jobref'        ]) ? $_POST['jobref'      ] : $null_exists = true;
 
     if (!$null_exists){
-        $conn = mysqli_connect("localhost", "root", "", "clownss");
+        $conn = mysqli_connect($host, $username, $password, $database);
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
         }

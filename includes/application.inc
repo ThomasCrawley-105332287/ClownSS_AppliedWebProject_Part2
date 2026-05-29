@@ -8,7 +8,7 @@
         endif;
     ?>
     <h2 
-        id="headings"> <?php if (!$update) {echo "You Have Submitted These Details";} else {echo "These Are Your New Details";}; ?>
+        id="headings"> <?php if (!$update) {echo "You Have Saved These Details";} else {echo "These Are Your New Saved Details";}; ?>
     </h2>
     <p>
         <label for="jobref">

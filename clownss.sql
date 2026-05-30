@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2026 at 10:07 AM
+-- Generation Time: May 30, 2026 at 07:26 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -29,20 +29,26 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `about` (
   `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `project1` varchar(300) NOT NULL,
-  `project2` varchar(150) NOT NULL
+  `name` varchar(25) NOT NULL,
+  `student_id` varchar(10) NOT NULL,
+  `contribution1` text NOT NULL,
+  `contribution2` text NOT NULL,
+  `quote` text NOT NULL,
+  `translation` text NOT NULL,
+  `dream_job` varchar(100) NOT NULL,
+  `coding_snack` varchar(50) NOT NULL,
+  `hometown` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `about`
 --
 
-INSERT INTO `about` (`id`, `name`, `project1`, `project2`) VALUES
-(1, 'Alex Hall', 'made jobs page', 'made .inc files, settings.php and about database'),
-(2, 'Jack Goodsell', 'made about page', 'wip'),
-(3, 'Callum Rochfort', 'made apply page', 'wip'),
-(4, 'Thomas Crawley', 'made index page', 'wip');
+INSERT INTO `about` (`id`, `name`, `student_id`, `contribution1`, `contribution2`, `quote`, `translation`, `dream_job`, `coding_snack`, `hometown`) VALUES
+(1, 'Alex Hall', '105419083', 'jobs.html, jobs-styles.css, main_style_sheet.css', 'header.inc, nav.inc, footer.inc, settings.php, about page linked to database', '\"Pǎo zài chē qián de rén huì lèi, pǎo zài chē hòu de rén huì jīnpílìjìn.\"', '\"Man who runs in front of car gets tired. Man who runs behind car gets exhausted.\"', 'IT Job', 'Coffee', 'Pakenham'),
+(2, 'Thomas Crawley', '105332287', 'Index page, jira management, GitHub management', 'WIP', '\"vivimusque moriemurque item fratres\"', '\"we live and die as brothers\"', 'Lead engineer for asteroid mining company', 'Pizza flavoured shapes', 'Park Orchards'),
+(3, 'Callum Rochfort', '106463515', 'Apply page, apply style sheet, main_style_sheet.css', 'WIP', 'این نیز بگذرد', 'This too shall pass', '	Machine Ethicist', 'Coffee', 'Resevoir'),
+(4, 'Jack Goodsell', '106016142', 'about.html, about-styles.css, main_style_sheet.css', 'WIP', '\"A szeretleken nagyjából azt értem, hogy hiányzol akkor is, ha itt vagy.”', '\"What I mean by love you, is that I miss you even if you’re here\"', 'Audio Engineer', 'Bounty', 'Woodend');
 
 -- --------------------------------------------------------
 

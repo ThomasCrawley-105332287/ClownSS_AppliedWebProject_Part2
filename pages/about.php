@@ -23,7 +23,6 @@ $selfLink = "about.php";
 ?>
 
 <?php
-
 require_once("../includes/settings.php");
 
 $conn = mysqli_connect(
@@ -41,10 +40,22 @@ if (!$conn) {
     );
 }
 ?>
+<?php 
+$sql = "SELECT * FROM about"; 
+$result = mysqli_query($conn, $sql);
+?>  
 
+<?php
+$alex    = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM about WHERE id = 1"));
+$thomas  = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM about WHERE id = 2"));
+$callum  = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM about WHERE id = 3"));
+$jack    = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM about WHERE id = 4"));
+?>
 
 <?php include '../includes/header.inc'; ?>
 <?php include '../includes/nav.inc'; ?>
+
+
 
     <!-- Creates a space for the nav bar to sit in when the viewport is at the top of the page-->
     <div class="nav_space"></div>
@@ -78,25 +89,33 @@ if (!$conn) {
         <section>
             <h2>Members &amp; Contributions</h2>
             <dl>
-                <dt>Thomas Crawley <span class="student-id">105332287</span></dt>
-                <dd><strong>Contribution:</strong> Index page, jira management, GitHub management</dd>
-                <dd><strong>Quote:</strong> "vivimusque moriemurque item fratres"</dd>
-                <dd><strong>Translation:</strong> "we live and die as brothers"</dd>
+                <dt><?php echo htmlspecialchars($thomas['name']); ?>
+                <span class="student-id"><?php echo htmlspecialchars($thomas['student_id']); ?></span></dt>
+                <dd><strong>Contribution:</strong> <?php echo htmlspecialchars($thomas['contribution1']); ?></dd>
+                <dd><strong>Contribution 2:</strong> <?php echo htmlspecialchars($thomas['contribution2']); ?></dd>
+                <dd><strong>Quote:</strong> <?php echo htmlspecialchars($thomas['quote']); ?></dd>
+                <dd><strong>Translation:</strong> <?php echo htmlspecialchars($thomas['translation']); ?></dd>
 
-                <dt>Callum Rochfort <span class="student-id">106463515</span></dt>
-                <dd><strong>Contribution:</strong> Apply page, apply style sheet, main_style_sheet.css</dd>
-                <dd><strong>Quote:</strong>این نیز بگذرد</dd>
-                <dd><strong>Translation:</strong>This too shall pass</dd>
+                <dt><?php echo htmlspecialchars($callum['name']); ?>
+                <span class="student-id"><?php echo htmlspecialchars($callum['student_id']); ?></span></dt>
+                <dd><strong>Contribution:</strong> <?php echo htmlspecialchars($callum['contribution1']); ?></dd>
+                <dd><strong>Contribution 2:</strong> <?php echo htmlspecialchars($callum['contribution2']); ?></dd>
+                <dd><strong>Quote:</strong> <?php echo htmlspecialchars($callum['quote']); ?></dd>
+                <dd><strong>Translation:</strong> <?php echo htmlspecialchars($callum['translation']); ?></dd>
 
-                <dt>Jack Goodsell <span class="student-id">106016142</span></dt>
-                <dd><strong>Contribution:</strong> about.html, about-styles.css, main_style_sheet.css</dd>
-                <dd><strong>Quote:</strong> "A szeretleken nagyjából azt értem, hogy hiányzol akkor is, ha itt vagy.”</dd>
-                <dd><strong>Translation:</strong> "What I mean by love you, is that I miss you even if you’re here"</dd>
+                <dt><?php echo htmlspecialchars($jack['name']); ?>
+                <span class="student-id"><?php echo htmlspecialchars($jack['student_id']); ?></span></dt>
+                <dd><strong>Contribution:</strong> <?php echo htmlspecialchars($jack['contribution1']); ?></dd>
+                <dd><strong>Contribution 2:</strong> <?php echo htmlspecialchars($jack['contribution2']); ?></dd>
+                <dd><strong>Quote:</strong> <?php echo htmlspecialchars($jack['quote']); ?></dd>
+                <dd><strong>Translation:</strong> <?php echo htmlspecialchars($jack['translation']); ?></dd>
 
-                <dt>Alex Hall <span class="student-id">105419083</span></dt>
-                <dd><strong>Contribution:</strong> jobs.html, jobs-styles.css, main_style_sheet.css</dd>
-                <dd><strong>Quote:</strong> "Pǎo zài chē qián de rén huì lèi, pǎo zài chē hòu de rén huì jīnpílìjìn."</dd>
-                <dd><strong>Translation:</strong> "Man who runs in front of car gets tired. Man who runs behind car gets exhausted."</dd>
+                <dt><?php echo htmlspecialchars($alex['name']); ?>
+                <span class="student-id"><?php echo htmlspecialchars($alex['student_id']); ?></span></dt>
+                <dd><strong>Contribution:</strong> <?php echo htmlspecialchars($alex['contribution1']); ?></dd>
+                <dd><strong>Contribution 2:</strong> <?php echo htmlspecialchars($alex['contribution2']); ?></dd>
+                <dd><strong>Quote:</strong> <?php echo htmlspecialchars($alex['quote']); ?></dd>
+                <dd><strong>Translation:</strong> <?php echo htmlspecialchars($alex['translation']); ?></dd>
             </dl>
         </section>
 

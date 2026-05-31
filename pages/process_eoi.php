@@ -15,20 +15,28 @@
 
     $selfLink = "process_eoi.php";
 
+    function sanitise_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+
+        return $data;
+    }
+
     $null_exists = false;
-    $first_name     = isset($_POST['first_name'    ]) ? $_POST['first_name'  ] : $null_exists = true;
-    $last_name      = isset($_POST['last_name'     ]) ? $_POST['last_name'   ] : $null_exists = true;
-    $gender         = isset($_POST['gender'        ]) ? $_POST['gender'      ] : $null_exists = true;
-    $dob            = isset($_POST['dob'           ]) ? $_POST['dob'         ] : $null_exists = true;
+    $first_name     = isset($_POST['first_name'    ]) ? sanitise_input($_POST['first_name'  ]) : $null_exists = true;
+    $last_name      = isset($_POST['last_name'     ]) ? sanitise_input($_POST['last_name'   ]) : $null_exists = true;
+    $gender         = isset($_POST['gender'        ]) ? sanitise_input($_POST['gender'      ]) : $null_exists = true;
+    $dob            = isset($_POST['dob'           ]) ? sanitise_input($_POST['dob'         ]) : $null_exists = true;
     $citizenship    = isset($_POST['citizenship'   ]) ? 1 : 0;
     $indigenous     = isset($_POST['indigenous'    ]) ? 1 : 0;
-    $work_visa      = isset($_POST['work_visa'     ]) ? $_POST['work_visa'   ] : $null_exists = true;
-    $street         = isset($_POST['street'        ]) ? $_POST['street'      ] : $null_exists = true;
-    $suburb         = isset($_POST['suburb'        ]) ? $_POST['suburb'      ] : $null_exists = true;
-    $state          = isset($_POST['state'         ]) ? $_POST['state'       ] : $null_exists = true;
-    $postcode       = isset($_POST['postcode'      ]) ? $_POST['postcode'    ] : $null_exists = true;
-    $phone_number   = isset($_POST['phone_number'  ]) ? $_POST['phone_number'] : $null_exists = true;
-    $email          = isset($_POST['email'         ]) ? $_POST['email'       ] : $null_exists = true;
+    $work_visa      = isset($_POST['work_visa'     ]) ? sanitise_input($_POST['work_visa'   ]) : $null_exists = true;
+    $street         = isset($_POST['street'        ]) ? sanitise_input($_POST['street'      ]) : $null_exists = true;
+    $suburb         = isset($_POST['suburb'        ]) ? sanitise_input($_POST['suburb'      ]) : $null_exists = true;
+    $state          = isset($_POST['state'         ]) ? sanitise_input($_POST['state'       ]) : $null_exists = true;
+    $postcode       = isset($_POST['postcode'      ]) ? sanitise_input($_POST['postcode'    ]) : $null_exists = true;
+    $phone_number   = isset($_POST['phone_number'  ]) ? sanitise_input($_POST['phone_number']) : $null_exists = true;
+    $email          = isset($_POST['email'         ]) ? sanitise_input($_POST['email'       ]) : $null_exists = true;
     $SC001keyskill1 = isset($_POST['SC001keyskill1']) ? 1 : 0;
     $SC001keyskill2 = isset($_POST['SC001keyskill2']) ? 1 : 0;
     $SC001keyskill3 = isset($_POST['SC001keyskill3']) ? 1 : 0;
@@ -39,8 +47,8 @@
     $SC002keyskill3 = isset($_POST['SC002keyskill3']) ? 1 : 0;
     $SC002keyskill4 = isset($_POST['SC002keyskill4']) ? 1 : 0;
     $SC002keyskill5 = isset($_POST['SC002keyskill5']) ? 1 : 0;
-    $other_skills   = isset($_POST['other_skills'  ]) ? $_POST['other_skills'] : '';
-    $job_ref_num    = isset($_POST['jobref'        ]) ? $_POST['jobref'      ] : $null_exists = true;
+    $other_skills   = isset($_POST['other_skills'  ]) ? sanitise_input($_POST['other_skills']) : '';
+    $job_ref_num    = isset($_POST['jobref'        ]) ? sanitise_input($_POST['jobref'      ]) : $null_exists = true;
 
     if (!$null_exists){
         $conn = mysqli_connect($host, $username, $password, $database);

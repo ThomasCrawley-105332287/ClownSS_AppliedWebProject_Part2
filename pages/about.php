@@ -46,10 +46,10 @@ $result = mysqli_query($conn, $sql);
 ?>  
 
 <?php
-$alex    = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM about WHERE id = 1"));
-$thomas  = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM about WHERE id = 2"));
-$callum  = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM about WHERE id = 3"));
-$jack    = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM about WHERE id = 4"));
+$members = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $members[] = $row;
+}
 ?>
 
 <?php include '../includes/header.inc'; ?>
@@ -89,33 +89,14 @@ $jack    = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM about WHERE id 
         <section>
             <h2>Members &amp; Contributions</h2>
             <dl>
-                <dt><?php echo htmlspecialchars($thomas['name']); ?>
-                <span class="student-id"><?php echo htmlspecialchars($thomas['student_id']); ?></span></dt>
-                <dd><strong>Contribution:</strong> <?php echo htmlspecialchars($thomas['contribution1']); ?></dd>
-                <dd><strong>Contribution 2:</strong> <?php echo htmlspecialchars($thomas['contribution2']); ?></dd>
-                <dd><strong>Quote:</strong> <?php echo htmlspecialchars($thomas['quote']); ?></dd>
-                <dd><strong>Translation:</strong> <?php echo htmlspecialchars($thomas['translation']); ?></dd>
-
-                <dt><?php echo htmlspecialchars($callum['name']); ?>
-                <span class="student-id"><?php echo htmlspecialchars($callum['student_id']); ?></span></dt>
-                <dd><strong>Contribution:</strong> <?php echo htmlspecialchars($callum['contribution1']); ?></dd>
-                <dd><strong>Contribution 2:</strong> <?php echo htmlspecialchars($callum['contribution2']); ?></dd>
-                <dd><strong>Quote:</strong> <?php echo htmlspecialchars($callum['quote']); ?></dd>
-                <dd><strong>Translation:</strong> <?php echo htmlspecialchars($callum['translation']); ?></dd>
-
-                <dt><?php echo htmlspecialchars($jack['name']); ?>
-                <span class="student-id"><?php echo htmlspecialchars($jack['student_id']); ?></span></dt>
-                <dd><strong>Contribution:</strong> <?php echo htmlspecialchars($jack['contribution1']); ?></dd>
-                <dd><strong>Contribution 2:</strong> <?php echo htmlspecialchars($jack['contribution2']); ?></dd>
-                <dd><strong>Quote:</strong> <?php echo htmlspecialchars($jack['quote']); ?></dd>
-                <dd><strong>Translation:</strong> <?php echo htmlspecialchars($jack['translation']); ?></dd>
-
-                <dt><?php echo htmlspecialchars($alex['name']); ?>
-                <span class="student-id"><?php echo htmlspecialchars($alex['student_id']); ?></span></dt>
-                <dd><strong>Contribution:</strong> <?php echo htmlspecialchars($alex['contribution1']); ?></dd>
-                <dd><strong>Contribution 2:</strong> <?php echo htmlspecialchars($alex['contribution2']); ?></dd>
-                <dd><strong>Quote:</strong> <?php echo htmlspecialchars($alex['quote']); ?></dd>
-                <dd><strong>Translation:</strong> <?php echo htmlspecialchars($alex['translation']); ?></dd>
+                <?php foreach ($members as $row): ?>
+                <dt><?php echo htmlspecialchars($row['name']); ?>
+                <span class="student-id"><?php echo htmlspecialchars($row['student_id']); ?></span></dt>
+                <dd><strong>Contribution:</strong> <?php echo htmlspecialchars($row['contribution1']); ?></dd>
+                <dd><strong>Contribution 2:</strong> <?php echo htmlspecialchars($row['contribution2']); ?></dd>
+                <dd><strong>Quote:</strong> <?php echo htmlspecialchars($row['quote']); ?></dd>
+                <dd><strong>Translation:</strong> <?php echo htmlspecialchars($row['translation']); ?></dd>
+                <?php endforeach; ?>
             </dl>
         </section>
 
@@ -142,30 +123,14 @@ $jack    = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM about WHERE id 
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach ($members as $member): ?>
                     <tr>
-                        <td>Thomas Crawley</td>
-                        <td>Lead engineer for asteroid mining company</td>
-                        <td>Pizza flavoured shapes</td>
-                        <td>Park Orchards</td>
+                        <td><?php echo htmlspecialchars($member['name']); ?></td>
+                        <td><?php echo htmlspecialchars($member['dream_job']); ?></td>
+                        <td><?php echo htmlspecialchars($member['coding_snack']); ?></td>
+                        <td><?php echo htmlspecialchars($member['hometown']); ?></td>
                     </tr>
-                    <tr>
-                        <td>Callum Rochfort</td>
-                        <td>Machine Ethicist</td>
-                        <td>Coffee</td>
-                        <td>Resevoir</td>
-                    </tr>
-                    <tr>
-                        <td>Jack Goodsell</td>
-                        <td>Audio Engineer</td>
-                        <td>Bounty</td>
-                        <td>Woodend</td>
-                    </tr>
-                    <tr>
-                        <td>Alex Hall</td>
-                        <td>IT Job</td>
-                        <td>Coffee</td>
-                        <td>Pakenham</td>
-                    </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </section>

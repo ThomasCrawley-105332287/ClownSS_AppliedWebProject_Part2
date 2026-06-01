@@ -371,8 +371,9 @@ if (!$result) {
 
             <td><?= htmlspecialchars($row['last_name']) ?></td>
 
-                //Create a dictionary for converting gender codes into display-friendly text
                 <?php
+                //Create a dictionary for converting gender codes into display-friendly text
+
                 $genderLabels = [
                     "male" => "Male",
                     "female" => "Female",

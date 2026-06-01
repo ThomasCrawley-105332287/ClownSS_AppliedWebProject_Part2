@@ -27,7 +27,21 @@
     $first_name     = isset($_POST['first_name'    ]) ? sanitise_input($_POST['first_name'  ]) : $null_exists = true;
     $last_name      = isset($_POST['last_name'     ]) ? sanitise_input($_POST['last_name'   ]) : $null_exists = true;
     $gender         = isset($_POST['gender'        ]) ? sanitise_input($_POST['gender'      ]) : $null_exists = true;
-    $dob            = isset($_POST['dob'           ]) ? sanitise_input($_POST['dob'         ]) : $null_exists = true;
+    $dob_raw        = isset($_POST['dob'           ]) ? sanitise_input($_POST['dob'         ]) : $null_exists = true;
+    //per the php documentation "https://www.php.net/manual/en/function.checkdate.php" 
+    //we can take the raw date of birth user input, validate it's pattern and explode it into three substrings by the / seperating them,
+    //to get a month, day and a year, to later be reformated to day, month year and used in manage 
+    //for the eoi viewport display 
+    if (!preg_match('/^\d{2}\/\d{2}\/\d{4}$/', $dob_raw)) {die("DOB must be in DD/MM/YYYY format using slashes (/). Please go back to the <a href='$applyLink'>apply page</a>  to fill out the form again.");}
+    $dob_parts = explode('/', $dob_raw);
+    if (count($dob_parts) !== 3) {die("Invalid DOB format. Use DD/MM/YYYY. Please go back to the <a href='$applyLink'>apply page</a>  to fill out the form again.");}
+    $day = $dob_parts[0];
+    $month = $dob_parts[1];
+    $year = $dob_parts[2];
+    //check that it is a valid gregorian date per checkmate, if yes store dob to insert, if no exit the program
+    if (!checkdate($month, $day, $year)) {die("Invalid date. Please go back to the <a href='$applyLink'>apply page</a>  to fill out the form again.");}
+    $dob = "$year-$month-$day";
+    
     $citizenship    = isset($_POST['citizenship'   ]) ? 1 : 0;
     $indigenous     = isset($_POST['indigenous'    ]) ? 1 : 0;
     $work_visa      = isset($_POST['work_visa'     ]) ? sanitise_input($_POST['work_visa'   ]) : $null_exists = true;
@@ -49,6 +63,14 @@
     $SC002keyskill5 = isset($_POST['SC002keyskill5']) ? 1 : 0;
     $other_skills   = isset($_POST['other_skills'  ]) ? sanitise_input($_POST['other_skills']) : '';
     $job_ref_num    = isset($_POST['jobref'        ]) ? sanitise_input($_POST['jobref'      ]) : $null_exists = true;
+    
+    $sc001SkillCount = $SC001keyskill1 + $SC001keyskill2 + $SC001keyskill3 + $SC001keyskill4 + $SC001keyskill5;
+    if ($job_ref_num == "SC001" && $sc001SkillCount == 0) { die("Must select at least one skill relevant to your reference number. 
+    Please go back to the <a href='$applyLink'>apply page</a>  to fill out the form again.<P>"); }
+
+    $sc002SkillCount = $SC002keyskill1 + $SC002keyskill2 + $SC002keyskill3 + $SC002keyskill4 + $SC002keyskill5;
+    if ($job_ref_num == "SC002" && $sc002SkillCount == 0) { die("Must select at least one skill relevant to your reference number. 
+    Please go back to the <a href='$applyLink'>apply page</a>  to fill out the form again.<P>"); }
 
     if (!$null_exists){
         $conn = mysqli_connect($host, $username, $password, $database);

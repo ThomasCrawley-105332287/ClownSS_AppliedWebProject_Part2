@@ -36,29 +36,58 @@ $selfLink = "apply.php";
          </article>
 
          <form method="post" action="process_eoi.php">
-            <!--Note we have to use a special escape character to print an apostrophe on the Web page -->
             <h2 id="headings">Applicant Details </h2>
-            <p><label for="jobref">Job Reference Number</label> 
-               <input type="text" name= "jobref" id="jobref" minlength="5" maxlength="5" required="required"/>
-            </p>
+            <label for="jobref">Job Reference Number</label>
+            <input type="text" name="jobref" id="jobref" minlength="5" maxlength="5" pattern="SC[0-9]{3}" title="Job reference must be in the format SC001 or SC002" required>
             <fieldset>
                <legend>Applicant Information Details</legend>
                <p><label for="first_name">First Name</label> 
-                  <input type="text" name= "first_name" id="first_name" maxlength="20" size="20" required="required"/>
+                  <input type="text" name= "first_name" id="first_name" maxlength="20" size="20" pattern="[A-Za-z]+" title="First name must contain alphabetic characters only" required="required"/>
                </p>
                <p><label for="last_name">Last Name</label> 
-                  <input type="text" name= "last_name" id="last_name" maxlength="20" size="20" required="required"/>
+                  <input type="text" name= "last_name" id="last_name" maxlength="20" size="20" pattern="[A-Za-z]+" title="Last name must contain alphabetic characters only" required="required"/>
                </p>
-               <p><label for="gender">Gender</label> 
-                  <select name="gender" id="gender" required="required">
-                     <option value="female">Female</option>			
-                     <option value="male">Male</option>
-                     <option value="other">Other</option>
-                     <option value="prefernot">Prefer not to Say</option>
-                  </select>
-               </p>
+               <fieldset>
+                  <legend>Gender</legend>
+
+                  <p>
+                     <input type="radio"
+                           id="female"
+                           name="gender"
+                           value="female"
+                           required>
+                     <label for="female">Female</label>
+                  </p>
+
+                  <p>
+                     <input type="radio"
+                           id="male"
+                           name="gender"
+                           value="male">
+
+                     <label for="male">Male</label>
+                  </p>
+
+                  <p>
+                     <input type="radio"
+                           id="other"
+                           name="gender"
+                           value="other">
+
+                     <label for="other">Other</label>
+                  </p>
+
+                  <p>
+                     <input type="radio"
+                           id="prefer_not"
+                           name="gender"
+                           value="prefer_not">
+
+                     <label for="prefer_not">Prefer not to say</label>
+                  </p>
+               </fieldset>
                <p><label for="dob">Date of Birth</label> 
-                  <input type="date" name= "dob" id="dob" placeholder="dd-mm-yyyy" maxlength="10" size="10" required="required"/>
+                  <input type="text" name= "dob" id="dob" placeholder="dd/mm/yyyy" pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/[0-9]{4}" title="Date must be in dd/mm/yyyy format" maxlength="10" size="10" required="required"/>
                </p>
                <fieldset>
                   <legend>Right to Work Status</legend>
@@ -106,14 +135,14 @@ $selfLink = "apply.php";
                      </select>
                   </p>
                   <p><label for="postcode">Postcode</label> 
-                     <input type="text" id="postcode" name="postcode" maxlength="4" size="10" required="required"/>
+                     <input type="text" id="postcode" name="postcode" maxlength="4" size="10" pattern="^[0-9]{4}$" title="Postcode must be 4 digits" required="required">
                   </p>
                </fieldset>
                <fieldset>
                   <legend>Contact Details</legend>
                   <p>Provide Your Contact Details Below</p>
                   <p><label for="phone_number">Phone Number</label>
-                     <input type="text" id="phone_number" name="phone_number" minlength="8" maxlength="12" size="30" required="required">
+                     <input type="text" id="phone_number" name="phone_number" pattern="^[0-9 ]{8,12}" title="8 to 12 digits only" size="30" required="required">
                   </p>
                   <p><label for="email">Email</label>
                      <input type="email" id="email" name="email" required="required">

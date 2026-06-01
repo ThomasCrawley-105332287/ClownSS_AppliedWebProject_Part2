@@ -1,0 +1,84 @@
+.table-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;   /* forces single line */
+    width: 100%;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+/* Left side styling (filtering) */
+.left-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;        
+    flex-wrap: nowrap;   
+}
+
+/* Right side styling (sorting) */
+.right-controls {
+    display: flex;
+    align-items: center;
+    margin-left: auto;   
+    flex-shrink: 0;      
+    white-space: nowrap;
+}
+
+/* Input + selection for styling */
+.table-controls input,
+.table-controls select {
+    padding: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Button & linj spacing */
+.table-controls button,
+.table-controls a {
+    padding: 6px 10px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+
+
+/* Delete bar */
+.delete-bar {
+    margin-bottom: 10px;
+}
+
+.delete-bar form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.eoi-viewport {
+    width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+    padding: 0 20px;
+    /*border: 2px solid red;*/
+}
+.eoi-table th:nth-child(7),
+.eoi-table td:nth-child(7) {
+    width: 10rem;
+    max-width: 10rem;
+}
+
+.eoi-table td:nth-child(10) {
+    max-width: 14rem;
+    max-height: 6rem;
+    overflow-y: auto;
+    white-space: normal;
+}
+main {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+

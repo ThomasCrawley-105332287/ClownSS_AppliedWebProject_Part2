@@ -82,3 +82,19 @@ main {
     padding-right: 1rem;
 }
 
+.eoi-table th:nth-child(7),
+.eoi-table td:nth-child(7) {
+    width: 10rem;
+    max-width: 10rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+.eoi-table th:nth-child(8),
+.eoi-table td:nth-child(8) {
+    width: 12rem;
+    max-width: 12rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}

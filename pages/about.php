@@ -44,7 +44,7 @@ if (!$conn) {
 $sql = "SELECT * FROM about"; 
 $result = mysqli_query($conn, $sql);
 ?>  
-
+<!-- Makes an array of everything in the about database -->
 <?php
 $members = [];
 while ($row = mysqli_fetch_assoc($result)) {
@@ -89,6 +89,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <section>
             <h2>Members &amp; Contributions</h2>
             <dl>
+                <!-- uses a foreach loop that will print the data till all data is printed -->
                 <?php foreach ($members as $row): ?>
                 <dt><?php echo htmlspecialchars($row['name']); ?>
                 <span class="student-id"><?php echo htmlspecialchars($row['student_id']); ?></span></dt>

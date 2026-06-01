@@ -9,6 +9,19 @@
                         <a href="<?php echo $aboutLink; ?>">About Us</a>
                         <a href="<?php echo $jobsLink; ?>">Careers at ClownSS</a>
                         <a href="<?php echo $applyLink; ?>">Apply at ClownSS</a>
+<?php if (!empty($_SESSION['username'])): ?>
+
+    <a href="<?php echo $manageLink; ?>">
+       Logged in as <?php echo htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8'); ?>
+    </a>
+
+    <a href="<?php echo $logoutLink; ?>">Logout</a>
+
+<?php else: ?>
+
+    <a href="<?php echo $loginLink; ?>">Login</a>
+
+<?php endif; ?>
                     </nav>
                 </div>
                 <div>

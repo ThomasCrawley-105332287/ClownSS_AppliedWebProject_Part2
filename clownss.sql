@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2026 at 07:26 AM
+-- Generation Time: Jun 01, 2026 at 03:47 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -46,9 +46,9 @@ CREATE TABLE `about` (
 
 INSERT INTO `about` (`id`, `name`, `student_id`, `contribution1`, `contribution2`, `quote`, `translation`, `dream_job`, `coding_snack`, `hometown`) VALUES
 (1, 'Alex Hall', '105419083', 'jobs.html, jobs-styles.css, main_style_sheet.css', 'header.inc, nav.inc, footer.inc, settings.php, about page linked to database', '\"Pǎo zài chē qián de rén huì lèi, pǎo zài chē hòu de rén huì jīnpílìjìn.\"', '\"Man who runs in front of car gets tired. Man who runs behind car gets exhausted.\"', 'IT Job', 'Coffee', 'Pakenham'),
-(2, 'Thomas Crawley', '105332287', 'Index page, jira management, GitHub management', 'WIP', '\"vivimusque moriemurque item fratres\"', '\"we live and die as brothers\"', 'Lead engineer for asteroid mining company', 'Pizza flavoured shapes', 'Park Orchards'),
-(3, 'Callum Rochfort', '106463515', 'Apply page, apply style sheet, main_style_sheet.css', 'WIP', 'این نیز بگذرد', 'This too shall pass', '	Machine Ethicist', 'Coffee', 'Resevoir'),
-(4, 'Jack Goodsell', '106016142', 'about.html, about-styles.css, main_style_sheet.css', 'WIP', '\"A szeretleken nagyjából azt értem, hogy hiányzol akkor is, ha itt vagy.”', '\"What I mean by love you, is that I miss you even if you’re here\"', 'Audio Engineer', 'Bounty', 'Woodend');
+(2, 'Thomas Crawley', '105332287', 'Index page, jira management, GitHub management', 'Made the eoi table, application.inc,  and ability to upload the application to the eoi table through the process_eoi.php page', '\"vivimusque moriemurque item fratres\"', '\"we live and die as brothers\"', 'Lead engineer for asteroid mining company', 'Pizza flavoured shapes', 'Park Orchards'),
+(3, 'Callum Rochfort', '106463515', 'Apply page, apply style sheet, main_style_sheet.css', 'Made the non-login functionality of the manage page (eoi table viewer, table sorting and filtering, eoi deletion by job reference, ability to change eoi status in the viewer), did the CSS styling for manage page, added some user input validation in the eoi process page and changed the apply page to better meet the requirements and feedback of assignment 1.', 'این نیز بگذرد', 'This too shall pass', '	Machine Ethicist', 'Coffee', 'Resevoir'),
+(4, 'Jack Goodsell', '106016142', 'about.html, about-styles.css, main_style_sheet.css', 'Jobs table in the MySQL database, added the job data from the original jobs page, converted jobs.php to load all job information dynamically from the database, added a search bar to jobs.php that allows jobs to be searched, users table for manager authentication, login.php and logout.php and set up session-based login protection for manage.php, admin/admin account required for marker access and implemented secure login checks.', '\"A szeretleken nagyjából azt értem, hogy hiányzol akkor is, ha itt vagy.”', '\"What I mean by love you, is that I miss you even if you’re here\"', 'Audio Engineer', 'Bounty', 'Woodend');
 
 -- --------------------------------------------------------
 

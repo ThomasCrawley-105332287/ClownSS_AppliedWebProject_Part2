@@ -23,7 +23,9 @@ $selfLink = "manage.php";
 
 
 <?php
-session_start(); // Start or resume the session
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();  // Start or resume the session
+}
 
 // If user is not logged in, redirect to login page
 if (!isset($_SESSION["username"])) {

@@ -15,6 +15,9 @@ $indexLink = "../index.php";
 $aboutLink = "about.php";
 $jobsLink = "jobs.php";
 $applyLink = "apply.php";
+$loginLink = "login.php";
+$manageLink = "manage.php";
+$logoutLink = "logout.php";
 ?>
 
 <!-- footer.inc variables -->

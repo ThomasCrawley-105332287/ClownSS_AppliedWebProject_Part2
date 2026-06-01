@@ -14,6 +14,9 @@ $indexLink = "../index.php";
 $aboutLink = "about.php";
 $jobsLink = "jobs.php";
 $applyLink = "apply.php";
+$loginLink = "login.php";
+$manageLink = "manage.php";
+$logoutLink = "logout.php";
 ?>
 
 <!-- footer.inc variables -->
@@ -210,10 +213,6 @@ if (!$result) {
 <main>
 
 <h1>Manage EOIs</h1>
-
-<p>Logged in as:
-    <strong><?= htmlspecialchars($_SESSION["username"]) ?></strong>
-</p>
 
 <p><a href="logout.php">Logout</a></p>
 

@@ -12,6 +12,9 @@
     $aboutLink = "about.php";
     $jobsLink = "jobs.php";
     $applyLink = "apply.php";
+    $loginLink = "login.php";
+    $manageLink = "manage.php";
+    $logoutLink = "logout.php";
 ?>
 
 <!-- footer.inc variables -->
@@ -20,9 +23,7 @@ $selfLink = "login.php";
 ?>
 
 <?php
-if (session_status() === PHP_SESSION_NONE) {
 session_start();
-}
 
 require_once("../includes/settings.php");
 

@@ -3,7 +3,7 @@
   $pageTitle = "Manage EOIs";
   $metaDescription = "Manage Expressions of Interest for the ClownSS project.";
   $metaKeywords = "Smart City, ClownSS, EOIs, manage EOIs, administration, web management";
-  $metaAuthor = "Jack Goodsell";
+  $metaAuthor = "Jack Goodsell, Callum Rochfort";
   $mainCSS = "../styles/main_style_sheet.css";
 ?>
 
@@ -80,9 +80,13 @@ if (isset($_POST['update_status'])) {
 
 
 // Function to build the SQL query based on filters & sorting
+//build and EOI table query using: connected database, current(it being current is a consequence of using 
+// onchange later) sort value, job reference number if one is input. Name search using LIKE so that we can look
+//for all eoi applicants with any shared name substring e.g Callum and Charles both have 'a'. Status filter, to
+//allow user's to view only eoi's of a desired status.
 function buildEOIQuery($conn, $sort, $jobref, $search, $status)
 {
-    // Determine sorting order
+    // determine buildEOIQuery $sort value
     switch ($sort) {
 
         case 'oldest':
@@ -106,7 +110,7 @@ function buildEOIQuery($conn, $sort, $jobref, $search, $status)
             break;
     }
 
-    // Array for storing WHERE conditions
+    // Array for storing WHERE conditions, to be imploded later into a single SQL query
     $where = [];
 
     // Filter by job reference
@@ -166,8 +170,8 @@ function buildEOIQuery($conn, $sort, $jobref, $search, $status)
     ";
 }
 
-/* Inputs */
-// Read filter + sort values from GET request
+// Inputs
+// Retrieve current filter and sort values from URL parameters
 $sort = $_GET['sort'] ?? 'newest';
 $jobref = $_GET['jobref'] ?? '';
 $search = $_GET['search'] ?? '';
@@ -308,7 +312,7 @@ if (!$result) {
             $skills = [];
             
             //for each skill that has been checked (stored as true in the eoi table) 
-            //add the relevant string to the array, to display later.
+            //add the relevant string to the array, to display later
             if ($row['SC001_skill_1']) $skills[] = 'Bachelor degree in related field';
             if ($row['SC001_skill_2']) $skills[] = 'Minimum 2 years experience';
             if ($row['SC001_skill_3']) $skills[] = 'Python or R proficiency';
@@ -320,7 +324,7 @@ if (!$result) {
             if ($row['SC002_skill_3']) $skills[] = 'Energy monitoring platform knowledge';
             if ($row['SC002_skill_4']) $skills[] = 'Knowledge of Modbus, BACnet or MQTT';
             if ($row['SC002_skill_5']) $skills[] = 'Project and client management experience';
-
+            //Format contact and address information for table display
             $contact =
                 htmlspecialchars($row['phone_number']) .
                 "<br>" .
@@ -344,7 +348,7 @@ if (!$result) {
             if ($row['indigenous']) {
                 $citizenship[] = "Indigenous";
             }
-
+            // Build a readable/correct english citizenship/visa summary for display 
             if (!empty($row['work_visa'])) {
                 //create a dictionary that uses the skills checklist inputs as keys for labels to display
                 $visaLabels = [
@@ -367,6 +371,7 @@ if (!$result) {
 
             <td><?= htmlspecialchars($row['last_name']) ?></td>
 
+                //Create a dictionary for converting gender codes into display-friendly text
                 <?php
                 $genderLabels = [
                     "male" => "Male",

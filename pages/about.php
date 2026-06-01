@@ -5,7 +5,7 @@
   $metaKeywords = "Smart City, ClownSS, Web Development, HTML, Hover effects, styled table, bordered figure";
   $metaAuthor = "Jack Goodsell";
   $mainCSS = "../styles/main_style_sheet.css";
-  $extraCSS = "../styles/about-styles.css";
+  $extraCSS = "../styles/about_styles.css";
 ?>
 
 <!-- variables for nav.inc -->

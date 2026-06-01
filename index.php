@@ -5,7 +5,7 @@
   $metaKeywords = "Smart City, ClownSS, Web Development";
   $metaAuthor = "Thomas Crawley";
   $mainCSS = "styles/main_style_sheet.css";
-  $extraCSS = "styles/index-styles.css";
+  $extraCSS = "styles/index_styles.css";
 ?>
 
 <!-- variables for nav.inc -->
